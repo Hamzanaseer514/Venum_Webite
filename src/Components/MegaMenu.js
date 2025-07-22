@@ -207,41 +207,60 @@ const MegaMenu = ({ category }) => {
           </div>
         );
 
-      default:
+      case 'Kids':
         return (
           <div className="bg-white shadow-2xl">
             <div className="max-w-7xl mx-auto px-8 py-8">
-              <div className="grid grid-cols-4 gap-8">
-                <div>
-                  <h3 className="font-bold text-black mb-4">Category 1</h3>
+              <div className="grid grid-cols-12 gap-8">
+                <div className="col-span-2">
+                  <div className="space-y-4">
+                    <div className="font-bold text-lg text-black">New</div>
+                    <div className="font-bold text-lg text-black">Best Seller</div>
+                    <div className="font-bold text-lg text-red-500">Outlet</div>
+                  </div>
+                </div>
+
+                <div className="col-span-2">
+                  <h3 className="font-bold text-black mb-4">T-shirts & Tops</h3>
                   <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Item 1</li>
-                    <li className="hover:text-black cursor-pointer">Item 2</li>
-                    <li className="hover:text-black cursor-pointer">Item 3</li>
+                    <li className="hover:text-black cursor-pointer">Cotton T-shirts</li>
+                    <li className="hover:text-black cursor-pointer">Tank tops</li>
+                    <li className="hover:text-black cursor-pointer">Long Sleeves</li>
                   </ul>
                 </div>
-                <div>
-                  <h3 className="font-bold text-black mb-4">Category 2</h3>
+
+                <div className="col-span-2">
+                  <h3 className="font-bold text-black mb-4">Shorts & Pants</h3>
                   <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Item 1</li>
-                    <li className="hover:text-black cursor-pointer">Item 2</li>
-                    <li className="hover:text-black cursor-pointer">Item 3</li>
+                    <li className="hover:text-black cursor-pointer">Training shorts</li>
+                    <li className="hover:text-black cursor-pointer">Jogging Pants</li>
+                    <li className="hover:text-black cursor-pointer">Leggings</li>
                   </ul>
                 </div>
-                <div>
-                  <h3 className="font-bold text-black mb-4">Category 3</h3>
+
+                <div className="col-span-2">
+                  <h3 className="font-bold text-black mb-4">Hoodies & Jackets</h3>
                   <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Item 1</li>
-                    <li className="hover:text-black cursor-pointer">Item 2</li>
-                    <li className="hover:text-black cursor-pointer">Item 3</li>
+                    <li className="hover:text-black cursor-pointer">Hooded Sweatshirt</li>
+                    <li className="hover:text-black cursor-pointer">Zip Hoodie</li>
                   </ul>
                 </div>
-                <div>
+
+                <div className="col-span-2">
+                  <h3 className="font-bold text-black mb-4">Equipment</h3>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="hover:text-black cursor-pointer">Kids Boxing Gloves</li>
+                    <li className="hover:text-black cursor-pointer">Shin Guards</li>
+                    <li className="hover:text-black cursor-pointer">Jump Ropes</li>
+                  </ul>
+                </div>
+
+                <div className="col-span-2">
                   <h3 className="font-bold text-black mb-4">Featured</h3>
                   <div className="bg-gray-200 aspect-square rounded-lg overflow-hidden">
                     <img 
-                      src="https://images.pexels.com/photos/4164701/pexels-photo-4164701.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
-                      alt="Featured item"
+                      src="https://images.pexels.com/photos/4720779/pexels-photo-4720779.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
+                      alt="Kids featured"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -250,12 +269,68 @@ const MegaMenu = ({ category }) => {
             </div>
           </div>
         );
+
+      case 'Collections':
+        return (
+          <div className="bg-white shadow-2xl">
+            <div className="max-w-7xl mx-auto px-8 py-8">
+              <div className="grid grid-cols-12 gap-8">
+                <div className="col-span-3">
+                  <h3 className="font-bold text-black mb-4">Signature Series</h3>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="hover:text-black cursor-pointer">UFC Collection</li>
+                    <li className="hover:text-black cursor-pointer">ONE Championship</li>
+                    <li className="hover:text-black cursor-pointer">Muay Thai Heritage</li>
+                  </ul>
+                </div>
+
+                <div className="col-span-3">
+                  <h3 className="font-bold text-black mb-4">Seasonal</h3>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="hover:text-black cursor-pointer">Summer Collection</li>
+                    <li className="hover:text-black cursor-pointer">Winter Collection</li>
+                    <li className="hover:text-black cursor-pointer">Limited Edition</li>
+                  </ul>
+                </div>
+
+                <div className="col-span-3">
+                  <h3 className="font-bold text-black mb-4">Sport Specific</h3>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="hover:text-black cursor-pointer">Boxing Collection</li>
+                    <li className="hover:text-black cursor-pointer">MMA Collection</li>
+                    <li className="hover:text-black cursor-pointer">Muay Thai Collection</li>
+                  </ul>
+                </div>
+
+                <div className="col-span-3">
+                  <h3 className="font-bold text-black mb-4">New Arrivals</h3>
+                  <div className="bg-gray-200 aspect-square rounded-lg overflow-hidden mb-4">
+                    <img 
+                      src="https://images.pexels.com/photos/4164760/pexels-photo-4164760.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
+                      alt="Collections featured"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      default:
+        return null;
     }
   };
 
+  const content = getMenuContent();
+  
+  if (!content) {
+    return null;
+  }
+
   return (
     <div className="animate-fadeIn">
-      {getMenuContent()}
+      {content}
     </div>
   );
 };
