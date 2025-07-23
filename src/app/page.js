@@ -1,7 +1,4 @@
 import React from "react";
-import Header from "../Components/Header";
-import Navigation from "../Components/Navigation";
-import MegaMenu from "@/Components/MegaMenu";
 import Hero from "@/Components/Hero";
 import GloveCarousel from "@/Components/GloveCarousel";
 import Banner from "@/Components/Banner";
@@ -9,7 +6,6 @@ import Discovercategories from "@/Components/Discovercategories";
 import GenderCategory from "@/Components/GenderCategory";
 import InfoBanner from "@/Components/InfoBanner";
 import VenumCustom from "@/Components/VenumCustom";
-import Footer from "@/Components/Footer";
 import {categoryProducts} from "../Data/data.js"; 
 
 const buttons = [
