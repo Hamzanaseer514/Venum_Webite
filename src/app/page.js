@@ -10,7 +10,7 @@ import GenderCategory from "@/Components/GenderCategory";
 import InfoBanner from "@/Components/InfoBanner";
 import VenumCustom from "@/Components/VenumCustom";
 import Footer from "@/Components/Footer";
-import products from "../Data/data.json"; 
+import {categoryProducts} from "../Data/data.js"; 
 
 const buttons = [
   { text: "See all", href: "https://eu.venum.com/collections/outlet" },
@@ -21,28 +21,26 @@ const buttons = [
 const page = () => {
   return (
     <div>
-      <div className="">
-        <MegaMenu />
-      </div>
+    
       <Hero buttons={buttons} />
       <GloveCarousel />
       <Banner />
       <Discovercategories
         heading="Discover our Categories"
         categories={["Equipment", "Men", "Women", "Kids"]}
-        products={products}
+        products={categoryProducts}
         defaultCategory="Equipment"
          height="500px"
       />
       <Discovercategories
         heading="Discover our Collection"
-        products={products}
+        products={categoryProducts}
         defaultCategory="Equipment"
         height=" 600px"
       />
       <Discovercategories
         heading="Discover our Sports"
-        products={products}
+        products={categoryProducts}
         defaultCategory="Equipment"
         height="600px"
       />

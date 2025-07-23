@@ -1,86 +1,215 @@
-import React from 'react';
+import React from "react";
+import {
+  SummerSalesSection,
+  NewArrivalsSection,
+  menMenuData,
+  womenMenuData,
+  kidsMenu,
+  equipmentMenuData,
+  customMenu,
+  venumMenu,
+} from "../Data/data.js";
 
 const MegaMenu = ({ category }) => {
   const getMenuContent = () => {
     switch (category) {
-      case 'Women':
+      case "Summer Sales":
         return (
           <div className="bg-white shadow-2xl">
-            <div className="max-w-7xl mx-auto px-8 py-8">
-              <div className="grid grid-cols-12 gap-8">
-                {/* Quick Links */}
-                <div className="col-span-2">
-                  <div className="space-y-4">
-                    <div className="font-bold text-lg text-black">New</div>
-                    <div className="font-bold text-lg text-black">Best Seller</div>
-                    <div className="font-bold text-lg text-red-500">Outlet</div>
+            <div className="max-w-6xl mx-auto px-8 py-8">
+              <div className="grid grid-cols-4 gap-2 text-center">
+                {SummerSalesSection.map((cat, index) => (
+                  <a href={cat.link} key={index} className="block group">
+                    <h2 className="font-bold mb-2">{cat.title}</h2>
+                    <div className="relative bg-gray-200 aspect-square rounded-lg overflow-hidden">
+                      <img
+                        src={cat.image}
+                        alt={cat.alt}
+                        className="w-full h-full object-cover brightness-70 group-hover:brightness-90 transition duration-300"
+                      />
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+      case "New":
+        return (
+          <div className="bg-white shadow-2xl">
+            <div className="max-w-6xl mx-auto px-8 py-8">
+              <div className="grid grid-cols-4 gap-2 text-center">
+                {NewArrivalsSection.map((cat, index) => (
+                  <a href={cat.link} key={index} className="block group">
+                    <h2 className="font-bold mb-2">{cat.title}</h2>
+                    <div className="relative bg-gray-200 aspect-square rounded-lg overflow-hidden">
+                      <img
+                        src={cat.image}
+                        alt={cat.alt}
+                        className="w-full h-full object-cover brightness-70 group-hover:brightness-90 transition duration-300"
+                      />
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+
+      case "Women":
+        return (
+          <div className="bg-white shadow-2xl">
+            <div className="max-w-6xl mx-auto px-8 py-8">
+              <div className="grid grid-cols-6 gap-6">
+                {/* Labels */}
+                <div>
+                  <div className="space-y-3">
+                    {womenMenuData.labels.map((label, idx) => (
+                      <div
+                        key={idx}
+                        className={`font-bold text-sm ${
+                          label === "Outlet" ? "text-red-500" : "text-black"
+                        }`}
+                      >
+                        {label}
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                {/* T-shirts & Bras */}
-                <div className="col-span-2">
-                  <h3 className="font-bold text-black mb-4">T-shirts & Bras</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Bras</li>
-                    <li className="hover:text-black cursor-pointer">Cotton T-shirts & Crop tops</li>
-                    <li className="hover:text-black cursor-pointer">Dry Tech T-shirts</li>
-                    <li className="hover:text-black cursor-pointer">Compression T-shirts</li>
-                    <li className="hover:text-black cursor-pointer">Tank tops</li>
+                {/* Column 1: T-shirts + Shoes */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {womenMenuData.categories[0].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600 mb-4">
+                    {womenMenuData.categories[0].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
+                  </ul>
+
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {womenMenuData.categories[4].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600">
+                    {womenMenuData.categories[4].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
                   </ul>
                 </div>
 
-                {/* Shorts */}
-                <div className="col-span-2">
-                  <h3 className="font-bold text-black mb-4">Shorts</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Training shorts</li>
-                    <li className="hover:text-black cursor-pointer">Muay Thai Shorts</li>
-                    <li className="hover:text-black cursor-pointer">Compression shorts</li>
-                    <li className="hover:text-black cursor-pointer">Fightshort & Vale Tudo</li>
+                {/* Column 2: Shorts + Accessories */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {womenMenuData.categories[1].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600 mb-4">
+                    {womenMenuData.categories[1].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
                   </ul>
 
-                  <h3 className="font-bold text-black mb-4 mt-8">Shoes</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Boxing Shoes</li>
-                    <li className="hover:text-black cursor-pointer">Wrestling shoes</li>
-                    <li className="hover:text-black cursor-pointer">Slides</li>
-                  </ul>
-                </div>
-
-                {/* Sweatshirts & Others */}
-                <div className="col-span-2">
-                  <h3 className="font-bold text-black mb-4">Sweatshirts & Jackets</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Zip Jacket</li>
-                    <li className="hover:text-black cursor-pointer">Hooded Sweatshirt</li>
-                  </ul>
-
-                  <h3 className="font-bold text-black mb-4 mt-8">Pants</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Jogging</li>
-                    <li className="hover:text-black cursor-pointer">Leggings</li>
-                  </ul>
-
-                  <h3 className="font-bold text-black mb-4 mt-8">Accessories</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Skipping Ropes</li>
-                    <li className="hover:text-black cursor-pointer">Socks</li>
-                    <li className="hover:text-black cursor-pointer">Hats & Caps</li>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {womenMenuData.categories[5].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600">
+                    {womenMenuData.categories[5].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
                   </ul>
                 </div>
 
-                {/* Tote bag */}
-                <div className="col-span-2">
-                  <h3 className="font-bold text-black mb-4">Tote bag, backpack and sports bag</h3>
+                {/* Column 3: Sweatshirts + Bags */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {womenMenuData.categories[2].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600 mb-4">
+                    {womenMenuData.categories[2].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
+                  </ul>
+
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {womenMenuData.categories[6].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600">
+                    {womenMenuData.categories[6].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
+                  </ul>
                 </div>
 
-                {/* Look of the moment */}
-                <div className="col-span-2">
-                  <h3 className="font-bold text-black mb-4">Look of the moment</h3>
-                  <div className="bg-gray-200 aspect-square rounded-lg overflow-hidden">
-                    <img 
-                      src="https://images.pexels.com/photos/4720779/pexels-photo-4720779.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
-                      alt="Featured look"
+                {/* Column 4: Pants only */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {womenMenuData.categories[3].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600">
+                    {womenMenuData.categories[3].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
+                  </ul>
+                </div>
+
+                {/* Column 5: Image */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {womenMenuData.categories[7].name}
+                  </h3>
+                  <div className="bg-gray-200 rounded-md aspect-square overflow-hidden w-full max-w-[260px]">
+                    <img
+                      src={womenMenuData.categories[7].image}
+                      alt="Look of the moment"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -90,63 +219,160 @@ const MegaMenu = ({ category }) => {
           </div>
         );
 
-      case 'Men':
+      case "Men":
         return (
           <div className="bg-white shadow-2xl">
-            <div className="max-w-7xl mx-auto px-8 py-8">
-              <div className="grid grid-cols-12 gap-8">
-                <div className="col-span-2">
-                  <div className="space-y-4">
-                    <div className="font-bold text-lg text-black">New</div>
-                    <div className="font-bold text-lg text-black">Best Seller</div>
-                    <div className="font-bold text-lg text-red-500">Outlet</div>
+            <div className="max-w-6xl mx-auto px-8 py-8">
+              <div className="grid grid-cols-6 gap-6">
+                {/* Labels */}
+                <div>
+                  <div className="space-y-3">
+                    {menMenuData.labels.map((label, idx) => (
+                      <div
+                        key={idx}
+                        className={`font-bold text-sm ${
+                          label === "Outlet" ? "text-red-500" : "text-black"
+                        }`}
+                      >
+                        {label}
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <div className="col-span-2">
-                  <h3 className="font-bold text-black mb-4">T-shirts & Tanks</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Cotton T-shirts</li>
-                    <li className="hover:text-black cursor-pointer">Dry Tech T-shirts</li>
-                    <li className="hover:text-black cursor-pointer">Compression T-shirts</li>
-                    <li className="hover:text-black cursor-pointer">Tank tops</li>
+                {/* Column 1: T-shirts + Shoes */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {menMenuData.categories[0].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600 mb-4">
+                    {menMenuData.categories[0].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
+                  </ul>
+
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {menMenuData.categories[4].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600">
+                    {menMenuData.categories[4].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
                   </ul>
                 </div>
 
-                <div className="col-span-2">
-                  <h3 className="font-bold text-black mb-4">Shorts & Pants</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Training shorts</li>
-                    <li className="hover:text-black cursor-pointer">Muay Thai Shorts</li>
-                    <li className="hover:text-black cursor-pointer">Board Shorts</li>
-                    <li className="hover:text-black cursor-pointer">Jogging Pants</li>
+                {/* Column 2: Shorts + Accessories */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {menMenuData.categories[1].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600 mb-4">
+                    {menMenuData.categories[1].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
+                  </ul>
+
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {menMenuData.categories[5].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600">
+                    {menMenuData.categories[5].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
                   </ul>
                 </div>
 
-                <div className="col-span-2">
-                  <h3 className="font-bold text-black mb-4">Hoodies & Jackets</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Hooded Sweatshirt</li>
-                    <li className="hover:text-black cursor-pointer">Zip Hoodie</li>
-                    <li className="hover:text-black cursor-pointer">Training Jacket</li>
+                {/* Column 3: Sweatshirts + Bags */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {menMenuData.categories[2].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600 mb-4">
+                    {menMenuData.categories[2].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
+                  </ul>
+
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {menMenuData.categories[6].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600">
+                    {menMenuData.categories[6].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
                   </ul>
                 </div>
 
-                <div className="col-span-2">
-                  <h3 className="font-bold text-black mb-4">Equipment</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Boxing Gloves</li>
-                    <li className="hover:text-black cursor-pointer">MMA Gloves</li>
-                    <li className="hover:text-black cursor-pointer">Shin Guards</li>
+                {/* Column 4: Pants only */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {menMenuData.categories[3].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600">
+                    {menMenuData.categories[3].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
                   </ul>
                 </div>
 
-                <div className="col-span-2">
-                  <h3 className="font-bold text-black mb-4">Featured</h3>
-                  <div className="bg-gray-200 aspect-square rounded-lg overflow-hidden">
-                    <img 
-                      src="https://images.pexels.com/photos/4720776/pexels-photo-4720776.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
-                      alt="Featured look"
+                {/* Column 5: Image */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {menMenuData.categories[7].name}
+                  </h3>
+                  <div className="bg-gray-200 rounded-md aspect-square overflow-hidden w-full max-w-[260px]">
+                    <img
+                      src={menMenuData.categories[7].image}
+                      alt="Look of the moment"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -156,156 +382,296 @@ const MegaMenu = ({ category }) => {
           </div>
         );
 
-      case 'Equipment':
+      case "Equipment":
         return (
           <div className="bg-white shadow-2xl">
-            <div className="max-w-7xl mx-auto px-8 py-8">
-              <div className="grid grid-cols-12 gap-8">
-                <div className="col-span-3">
-                  <h3 className="font-bold text-black mb-4">Boxing</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Boxing Gloves</li>
-                    <li className="hover:text-black cursor-pointer">Heavy Bags</li>
-                    <li className="hover:text-black cursor-pointer">Speed Bags</li>
-                    <li className="hover:text-black cursor-pointer">Hand Wraps</li>
-                    <li className="hover:text-black cursor-pointer">Mouth Guards</li>
-                  </ul>
-                </div>
-
-                <div className="col-span-3">
-                  <h3 className="font-bold text-black mb-4">MMA</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">MMA Gloves</li>
-                    <li className="hover:text-black cursor-pointer">Grappling Dummy</li>
-                    <li className="hover:text-black cursor-pointer">Shin Guards</li>
-                    <li className="hover:text-black cursor-pointer">Rash Guards</li>
-                  </ul>
-                </div>
-
-                <div className="col-span-3">
-                  <h3 className="font-bold text-black mb-4">Training</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Jump Ropes</li>
-                    <li className="hover:text-black cursor-pointer">Medicine Balls</li>
-                    <li className="hover:text-black cursor-pointer">Resistance Bands</li>
-                    <li className="hover:text-black cursor-pointer">Training Mats</li>
-                  </ul>
-                </div>
-
-                <div className="col-span-3">
-                  <h3 className="font-bold text-black mb-4">New Arrivals</h3>
-                  <div className="bg-gray-200 aspect-square rounded-lg overflow-hidden mb-4">
-                    <img 
-                      src="https://images.pexels.com/photos/4164760/pexels-photo-4164760.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
-                      alt="New equipment"
-                      className="w-full h-full object-cover"
-                    />
+            <div className="max-w-4xl mx-auto px-8 py-8">
+              <div className="grid grid-cols-5 gap-6">
+                {/* Column 1: Labels */}
+                <div>
+                  <div className="space-y-3">
+                    {equipmentMenuData.labels.map((label, idx) => (
+                      <div
+                        key={idx}
+                        className={`font-bold text-sm ${
+                          label === "Outlet" ? "text-red-500" : "text-black"
+                        }`}
+                      >
+                        {label}
+                      </div>
+                    ))}
                   </div>
+                </div>
+
+                {/* Column 2: Protectives + Boxing */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {equipmentMenuData.categories[0].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600 mb-4">
+                    {equipmentMenuData.categories[0].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
+                  </ul>
+
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {equipmentMenuData.categories[1].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600">
+                    {equipmentMenuData.categories[1].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
+                  </ul>
+                </div>
+
+                {/* Column 3: MMA + BJJ */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {equipmentMenuData.categories[2].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600 mb-4">
+                    {equipmentMenuData.categories[2].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
+                  </ul>
+
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {equipmentMenuData.categories[3].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600">
+                    {equipmentMenuData.categories[3].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
+                  </ul>
+                </div>
+
+                {/* Column 4: Muay Thai + Fitness */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {equipmentMenuData.categories[4].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600 mb-4">
+                    {equipmentMenuData.categories[4].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
+                  </ul>
+
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {equipmentMenuData.categories[5].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600">
+                    {equipmentMenuData.categories[5].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
+                  </ul>
+                </div>
+
+                {/* Column 5: Punching Bags + Motorsports */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {equipmentMenuData.categories[6].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600 mb-4">
+                    {equipmentMenuData.categories[6].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
+                  </ul>
+
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {equipmentMenuData.categories[7].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600">
+                    {equipmentMenuData.categories[7].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         );
 
-      case 'Kids':
+      case "Kids":
         return (
           <div className="bg-white shadow-2xl">
-            <div className="max-w-7xl mx-auto px-8 py-8">
-              <div className="grid grid-cols-12 gap-8">
-                <div className="col-span-2">
-                  <div className="space-y-4">
-                    <div className="font-bold text-lg text-black">New</div>
-                    <div className="font-bold text-lg text-black">Best Seller</div>
-                    <div className="font-bold text-lg text-red-500">Outlet</div>
-                  </div>
-                </div>
+            <div className="max-w-4xl mx-auto px-8 py-8">
+              <div className="grid grid-cols-3 gap-2 text-center">
+                {kidsMenu.map((cat, index) => (
+                  <a href={cat.link} key={index} className="block group">
+                    <h2 className="font-bold mb-2">{cat.title}</h2>
+                    <div className="relative bg-gray-200 aspect-square rounded-lg overflow-hidden">
+                      <img
+                        src={cat.image}
+                        alt={cat.alt}
+                        className="w-full h-full object-cover brightness-70 group-hover:brightness-90 transition duration-300"
+                      />
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+      case "Custom":
+        return (
+          <div className="bg-white shadow-2xl">
+            <div className="max-w-4xl mx-auto px-8 py-8">
+              <div className="grid grid-cols-3 gap-2 text-center">
+                {customMenu.map((cat, index) => (
+                  <a href={cat.link} key={index} className="block group">
+                    <h2 className="font-bold mb-2">{cat.title}</h2>
+                    <div className="relative  aspect-square rounded-lg overflow-hidden">
+                      <img
+                        src={cat.image}
+                        alt={cat.alt}
+                        className="w-full h-full object-cover  transition duration-300"
+                      />
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+      case "Venum x UFC":
+        return (
+          <div className="bg-white shadow-2xl">
+            <div className="max-w-5xl mx-auto px-8 py-8">
+              <div className="grid grid-cols-4 gap-4 text-center">
+                {venumMenu.map((cat, index) => (
+                  <a href={cat.link} key={index} className="block group">
+                    {/* Title */}
+                    <h2 className="font-bold text-sm mb-2">{cat.title}</h2>
 
-                <div className="col-span-2">
-                  <h3 className="font-bold text-black mb-4">T-shirts & Tops</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Cotton T-shirts</li>
-                    <li className="hover:text-black cursor-pointer">Tank tops</li>
-                    <li className="hover:text-black cursor-pointer">Long Sleeves</li>
-                  </ul>
-                </div>
-
-                <div className="col-span-2">
-                  <h3 className="font-bold text-black mb-4">Shorts & Pants</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Training shorts</li>
-                    <li className="hover:text-black cursor-pointer">Jogging Pants</li>
-                    <li className="hover:text-black cursor-pointer">Leggings</li>
-                  </ul>
-                </div>
-
-                <div className="col-span-2">
-                  <h3 className="font-bold text-black mb-4">Hoodies & Jackets</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Hooded Sweatshirt</li>
-                    <li className="hover:text-black cursor-pointer">Zip Hoodie</li>
-                  </ul>
-                </div>
-
-                <div className="col-span-2">
-                  <h3 className="font-bold text-black mb-4">Equipment</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Kids Boxing Gloves</li>
-                    <li className="hover:text-black cursor-pointer">Shin Guards</li>
-                    <li className="hover:text-black cursor-pointer">Jump Ropes</li>
-                  </ul>
-                </div>
-
-                <div className="col-span-2">
-                  <h3 className="font-bold text-black mb-4">Featured</h3>
-                  <div className="bg-gray-200 aspect-square rounded-lg overflow-hidden">
-                    <img 
-                      src="https://images.pexels.com/photos/4720779/pexels-photo-4720779.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
-                      alt="Kids featured"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
+                    {/* Image with light-to-dark transition on hover */}
+                    <div className="relative aspect-square rounded-lg overflow-hidden">
+                      <img
+                        src={cat.image}
+                        alt={cat.alt}
+                        className="w-full h-full object-cover transition duration-500 ease-in-out
+                         filter grayscale-[60%] brightness-[1.6] opacity-60 
+                         group-hover:grayscale-0 group-hover:brightness-100 group-hover:opacity-100"
+                      />
+                    </div>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
         );
 
-      case 'Collections':
+      case "Collections":
         return (
           <div className="bg-white shadow-2xl">
-            <div className="max-w-7xl mx-auto px-8 py-8">
+            <div className="max-w-6xl mx-auto px-8 py-8">
               <div className="grid grid-cols-12 gap-8">
                 <div className="col-span-3">
-                  <h3 className="font-bold text-black mb-4">Signature Series</h3>
+                  <h3 className="font-bold text-black mb-4">
+                    Signature Series
+                  </h3>
                   <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">UFC Collection</li>
-                    <li className="hover:text-black cursor-pointer">ONE Championship</li>
-                    <li className="hover:text-black cursor-pointer">Muay Thai Heritage</li>
+                    <li className="hover:text-black cursor-pointer">
+                      UFC Collection
+                    </li>
+                    <li className="hover:text-black cursor-pointer">
+                      ONE Championship
+                    </li>
+                    <li className="hover:text-black cursor-pointer">
+                      Muay Thai Heritage
+                    </li>
                   </ul>
                 </div>
 
                 <div className="col-span-3">
                   <h3 className="font-bold text-black mb-4">Seasonal</h3>
                   <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Summer Collection</li>
-                    <li className="hover:text-black cursor-pointer">Winter Collection</li>
-                    <li className="hover:text-black cursor-pointer">Limited Edition</li>
+                    <li className="hover:text-black cursor-pointer">
+                      Summer Collection
+                    </li>
+                    <li className="hover:text-black cursor-pointer">
+                      Winter Collection
+                    </li>
+                    <li className="hover:text-black cursor-pointer">
+                      Limited Edition
+                    </li>
                   </ul>
                 </div>
 
                 <div className="col-span-3">
                   <h3 className="font-bold text-black mb-4">Sport Specific</h3>
                   <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">Boxing Collection</li>
-                    <li className="hover:text-black cursor-pointer">MMA Collection</li>
-                    <li className="hover:text-black cursor-pointer">Muay Thai Collection</li>
+                    <li className="hover:text-black cursor-pointer">
+                      Boxing Collection
+                    </li>
+                    <li className="hover:text-black cursor-pointer">
+                      MMA Collection
+                    </li>
+                    <li className="hover:text-black cursor-pointer">
+                      Muay Thai Collection
+                    </li>
                   </ul>
                 </div>
 
                 <div className="col-span-3">
                   <h3 className="font-bold text-black mb-4">New Arrivals</h3>
                   <div className="bg-gray-200 aspect-square rounded-lg overflow-hidden mb-4">
-                    <img 
+                    <img
                       src="https://images.pexels.com/photos/4164760/pexels-photo-4164760.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
                       alt="Collections featured"
                       className="w-full h-full object-cover"
@@ -323,16 +689,12 @@ const MegaMenu = ({ category }) => {
   };
 
   const content = getMenuContent();
-  
+
   if (!content) {
     return null;
   }
 
-  return (
-    <div className="animate-fadeIn">
-      {content}
-    </div>
-  );
+  return <div className="animate-fadeIn">{content}</div>;
 };
 
 export default MegaMenu;
