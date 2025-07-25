@@ -445,6 +445,7 @@ import {
 import MegaMenu from "./MegaMenu";
 import Image from "next/image";
 import CartDrawer from "./CartDrawer";
+import SearchOverlay from "./SearchOverlay";
 import Link from "next/link";
 import { 
   SummerSalesSection, 
@@ -465,6 +466,7 @@ const Navigation = () => {
   const [expandedSubItem, setExpandedSubItem] = useState(null);
   const [cartOpen, setCartOpen] = useState(false);
   const [favOpen, setFavOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const dummyCart = [
     {
       title: "Venum contender 1.5",
@@ -538,6 +540,7 @@ const Navigation = () => {
 
   return (
     <nav className="bg-white border-b shadow-sm relative">
+      <SearchOverlay isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -602,7 +605,10 @@ const Navigation = () => {
 
             {/* Desktop icons */}
             <div className="hidden lg:flex items-center space-x-3">
-              <Search className="w-4 h-4 text-black hover:text-red-500 cursor-pointer" />
+              <Search 
+                onClick={() => setSearchOpen(true)}
+                className="w-4 h-4 text-black hover:text-red-500 cursor-pointer" 
+              />
               <Link href={"/account/login"}><User className="w-4 h-4 text-black hover:text-red-500 cursor-pointer" /></Link>
               <Heart
                 onClick={() => setFavOpen(true)}
@@ -748,7 +754,7 @@ const Navigation = () => {
           {/* Additional icons at the end of mobile menu */}
           <div className="flex items-center justify-between pt-4 mt-2 border-t border-gray-200">
             <div className="flex items-center space-x-1">
-              <Search className="w-5 h-5 text-black hover:text-red-500 cursor-pointer" />
+              <Search onClick={() => setSearchOpen(true)} className="w-5 h-5 text-black hover:text-red-500 cursor-pointer" />
               <span className="text-sm font-medium ml-2">Search</span>
             </div>
             
