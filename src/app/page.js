@@ -7,12 +7,13 @@ import GenderCategory from "@/Components/GenderCategory";
 import InfoBanner from "@/Components/InfoBanner";
 import VenumCustom from "@/Components/VenumCustom";
 import {categoryProducts} from "../Data/data.js"; 
+import FullBanner from "@/Components/FullBanner";
 
 const buttons = [
-  { text: "See all", href: "https://eu.venum.com/collections/outlet" },
-  { text: "Equipment" },
-  { text: "Men" },
-  { text: "Women" },
+  { text: "See all", slug: "all" },
+  { text: "Equipment", slug: "equipment" },
+  { text: "Men", slug: "men" },
+  { text: "Women", slug: "women" },
 ];
 const page = () => {
   return (
@@ -32,13 +33,17 @@ const page = () => {
         heading="Discover our Collection"
         products={categoryProducts}
         defaultCategory="Equipment"
-        height=" 600px"
+        height=" 550px"
       />
       <Discovercategories
         heading="Discover our Sports"
         products={categoryProducts}
         defaultCategory="Equipment"
-        height="600px"
+        height="550px"
+      />
+      <FullBanner 
+        backgroundImage="/images/fullbanner.jpg"
+        buttonText="Shop Collection"
       />
       <GenderCategory />
       <VenumCustom />

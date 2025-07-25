@@ -3,15 +3,15 @@ import { useRef, useEffect } from "react";
 import GloveCard from "./GloveCard";
 
 const gloves = new Array(15).fill(0).map((_, i) => ({
-  image: "/images/DiscoverCategory/c5.jpg",
+  thumbnail: "/images/DiscoverCategory/c5.jpg",
   title: `Venum Contender ${i + 1}`,
-  subtitle: "Boxing Gloves - Forest Green",
+  description: "Boxing Gloves - Forest Green",
   price: "49.99€",
-  variants: [
-    { img: "/images/DiscoverCategory/c5.jpg", selected: true },
-    { img: "/images/DiscoverCategory/c5.jpg" },
-    { img: "/images/DiscoverCategory/c5.jpg" },
-    { img: "/images/DiscoverCategory/c5.jpg" },
+  images: [
+    "/images/DiscoverCategory/c5.jpg",
+    "/images/DiscoverCategory/c5.jpg",
+    "/images/DiscoverCategory/c5.jpg",
+    "/images/DiscoverCategory/c5.jpg",
   ],
 }));
 

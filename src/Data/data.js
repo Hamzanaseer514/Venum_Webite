@@ -316,6 +316,77 @@ export const equipmentMenuData = {
   ],
 };
 
+export const collectionMenuData = {
+  labels: ["Foundation", "Collaborations", "Capsule"],
+  categories: [
+    // Column 2: Foundation
+    {
+      name: "Foundation",
+      subcategories: [
+        "Giant",
+        "Elite",
+        "Impact",
+        "Challenger",
+        "Contender",
+        "G-Fit Air",
+        "Classic",
+        "Kontakt",
+        "Essential",
+        "Venum Team",
+      ],
+    },
+
+    // Column 3: Collaborations
+    {
+      name: "Collaborations",
+      subcategories: [
+        "Venum x Ares",
+        "Venum x WOW FC",
+        "Venum x Polaris",
+        "Venum x Hexagone MMA",
+        "Venum x Bud Racing",
+        "Venum x UFC Unrivaled",
+        "Venum x Assassin's Creed: Shadows",
+        "Venum x Tekken 8",
+        "Venum x Ilia Topuria",
+        "Unmatched",
+        "Venum x DTR Fight",
+        "Venum x Top Rank",
+        "Venum x Shark",
+        "Venum x Demi Bagby",
+        "Venum x Sophia Rose",
+      ],
+    },
+
+    // Column 4: Capsule
+    {
+      name: "Capsule",
+      subcategories: [
+        "Twilight",
+        "Vectra",
+        "Power",
+        "Halo",
+        "Pulse",
+        "Divide",
+        "Octane",
+        "Boxing classic",
+        "Training Camp 4.0",
+        "Tactical XT",
+        "Jungle Ops",
+      ],
+    },
+
+    // Column 5: Image only
+    {
+      name: "New collection",
+      image: "/images/collection/roundtree.png",
+    },
+  ],
+};
+
+
+
+
 
 
 

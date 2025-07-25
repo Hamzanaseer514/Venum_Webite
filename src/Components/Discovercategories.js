@@ -326,7 +326,7 @@ export default function CategorySlider({
                   alt={product.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-3 sm:p-4">
+                <div className="absolute bottom-0 left-0 right-0  bg-opacity-50 p-3 sm:p-4">
                   <h3 className="text-white text-lg sm:text-xl font-semibold truncate">
                     {product.title}
                   </h3>

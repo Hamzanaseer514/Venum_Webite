@@ -8,6 +8,7 @@ import {
   equipmentMenuData,
   customMenu,
   venumMenu,
+  collectionMenuData,
 } from "../Data/data.js";
 
 const MegaMenu = ({ category }) => {
@@ -619,61 +620,74 @@ const MegaMenu = ({ category }) => {
       case "Collections":
         return (
           <div className="bg-white shadow-2xl">
-            <div className="max-w-6xl mx-auto px-8 py-8">
-              <div className="grid grid-cols-12 gap-8">
-                <div className="col-span-3">
-                  <h3 className="font-bold text-black mb-4">
-                    Signature Series
+            <div className="max-w-4xl mx-auto px-8 py-8">
+              <div className="grid grid-cols-4 gap-6">
+                {/* Column 1: Foundation */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {collectionMenuData.categories[0].name}
                   </h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">
-                      UFC Collection
-                    </li>
-                    <li className="hover:text-black cursor-pointer">
-                      ONE Championship
-                    </li>
-                    <li className="hover:text-black cursor-pointer">
-                      Muay Thai Heritage
-                    </li>
+                  <ul className="space-y-1 text-xs text-gray-600">
+                    {collectionMenuData.categories[0].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
                   </ul>
                 </div>
 
-                <div className="col-span-3">
-                  <h3 className="font-bold text-black mb-4">Seasonal</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">
-                      Summer Collection
-                    </li>
-                    <li className="hover:text-black cursor-pointer">
-                      Winter Collection
-                    </li>
-                    <li className="hover:text-black cursor-pointer">
-                      Limited Edition
-                    </li>
+                {/* Column 2: Collaborations */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {collectionMenuData.categories[1].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600">
+                    {collectionMenuData.categories[1].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
                   </ul>
                 </div>
 
-                <div className="col-span-3">
-                  <h3 className="font-bold text-black mb-4">Sport Specific</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-black cursor-pointer">
-                      Boxing Collection
-                    </li>
-                    <li className="hover:text-black cursor-pointer">
-                      MMA Collection
-                    </li>
-                    <li className="hover:text-black cursor-pointer">
-                      Muay Thai Collection
-                    </li>
+                {/* Column 3: Capsule */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {collectionMenuData.categories[2].name}
+                  </h3>
+                  <ul className="space-y-1 text-xs text-gray-600">
+                    {collectionMenuData.categories[2].subcategories.map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="hover:text-black cursor-pointer"
+                        >
+                          {item}
+                        </li>
+                      )
+                    )}
                   </ul>
                 </div>
 
-                <div className="col-span-3">
-                  <h3 className="font-bold text-black mb-4">New Arrivals</h3>
-                  <div className="bg-gray-200 aspect-square rounded-lg overflow-hidden mb-4">
+                {/* Column 4: Image (New Collection) */}
+                <div>
+                  <h3 className="font-bold text-black text-sm mb-2">
+                    {collectionMenuData.categories[3].name}
+                  </h3>
+                  <div className="bg-gray-200 rounded-md aspect-square overflow-hidden w-full max-w-[260px]">
                     <img
-                      src="https://images.pexels.com/photos/4164760/pexels-photo-4164760.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
-                      alt="Collections featured"
+                      src={collectionMenuData.categories[3].image}
+                      alt="New Collection"
                       className="w-full h-full object-cover"
                     />
                   </div>

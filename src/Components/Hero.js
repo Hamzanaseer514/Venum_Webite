@@ -176,10 +176,12 @@ export default function SummerSale({ buttons }) {
                 <span className={innerText}>{btn.text}</span>
               </Link>
             ) : (
-              <button key={index} className={buttonBase}>
-                <span className={innerBg}></span>
-                <span className={innerText}>{btn.text}</span>
-              </button>
+              <Link href={`/collection/${btn.slug}`} key={index}>
+                <button  className={buttonBase}>
+                  <span className={innerBg}></span>
+                  <span className={innerText}>{btn.text}</span>
+                </button>
+              </Link>
             )
           )}
         </div>
@@ -187,4 +189,3 @@ export default function SummerSale({ buttons }) {
     </div>
   );
 }
-
