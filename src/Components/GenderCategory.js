@@ -71,7 +71,7 @@ const genderData = [
   },
   {
     title: "Selection for her",
-    image: "/images/women.jpg",
+    image: "/images/women.webp",
     buttons: [
       { text: "Lifestyle", link: "/women/lifestyle" },
       { text: "Training", link: "/women/training" },
@@ -89,7 +89,7 @@ export default function GenderSelection() {
       
       <div className="w-full flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-10">
         {genderData.map((section, idx) => (
-          <div key={idx} className="flex-1 relative overflow-hidden shadow-lg rounded-sm">
+          <div key={idx} className="flex-1 relative overflow-hidden shadow-lg ">
             <div className="relative w-full h-[450px] sm:h-[550px] md:h-[650px]">
               <Image
                 src={section.image}

@@ -88,7 +88,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 export default function CustomPage() {
-  const heading = "Choose your category";
+  const heading = "The Venum Custom Personalization Experience";
   const categories = ["Custom Gloves", "Custom Kits", "Custom FightShorts"];
   const [activeCategory, setActiveCategory] = useState(categories[0]);
 

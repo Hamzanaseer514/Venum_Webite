@@ -54,6 +54,10 @@ export const products = [
     },
     images: [
       "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp",
+      "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp",
+      "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp",
+      "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp",
+      "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp",
     ],
     thumbnail:
       "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp",

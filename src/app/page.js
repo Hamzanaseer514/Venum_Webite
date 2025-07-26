@@ -6,7 +6,7 @@ import Discovercategories from "@/Components/Discovercategories";
 import GenderCategory from "@/Components/GenderCategory";
 import InfoBanner from "@/Components/InfoBanner";
 import VenumCustom from "@/Components/VenumCustom";
-import {categoryProducts} from "../Data/data.js"; 
+import {categoryProducts,discovernewcategory} from "../Data/data.js"; 
 import FullBanner from "@/Components/FullBanner";
 
 const buttons = [
@@ -31,8 +31,8 @@ const page = () => {
       />
       <Discovercategories
         heading="Discover our Collection"
-        products={categoryProducts}
-        defaultCategory="Equipment"
+        products={discovernewcategory}
+        // defaultCategory="Equipment"
         height=" 550px"
       />
       <Discovercategories

@@ -1,9 +1,9 @@
 import GloveCard from "@/Components/GloveCard";
 import { products } from "../../../Data/productdata";
-import FilterDrawer from "@/Components/FilterDrawer"; // ✅ import your drawer
+import FilterDrawer from "@/Components/FilterDrawer"; 
 
-export default function CollectionPage({ params }) {
-  const { slug } = params;
+export default async function CollectionPage( {params} ) {
+  const { slug } = await params;
   const filtered = products.filter((p) => p.category === slug);
 
   return (

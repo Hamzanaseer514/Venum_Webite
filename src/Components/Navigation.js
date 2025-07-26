@@ -1,5 +1,3 @@
-
-
 // "use client";
 
 // import React, { useState } from "react";
@@ -319,7 +317,7 @@
 //                 onClick={() => setCartOpen(true)}
 //                 className="w-5 h-5 text-black hover:text-red-500 cursor-pointer"
 //               />
-              
+
 //               {/* Mobile menu button */}
 //               <Menu
 //                 className="w-6 h-6 text-black cursor-pointer"
@@ -407,14 +405,14 @@
 //               )}
 //             </div>
 //           ))}
-          
+
 //           {/* Additional icons at the end of mobile menu */}
 //           <div className="flex items-center justify-between pt-4 mt-2 border-t border-gray-200">
 //             <div className="flex items-center space-x-1">
 //               <Search className="w-5 h-5 text-black hover:text-red-500 cursor-pointer" />
 //               <span className="text-sm font-medium ml-2">Search</span>
 //             </div>
-            
+
 //             <div className="flex items-center space-x-1">
 //               <Globe className="w-5 h-5 text-black" />
 //               <span className="text-sm font-semibold underline cursor-pointer text-black">
@@ -447,17 +445,17 @@ import Image from "next/image";
 import CartDrawer from "./CartDrawer";
 import SearchOverlay from "./SearchOverlay";
 import Link from "next/link";
-import { 
-  SummerSalesSection, 
+import {
+  SummerSalesSection,
   NewArrivalsSection,
-  menMenuData, 
-  womenMenuData, 
-  equipmentMenuData, 
+  menMenuData,
+  womenMenuData,
+  equipmentMenuData,
   collectionMenuData,
   kidsMenu,
   customMenu,
-  venumMenu 
-} from '../Data/data.js';
+  venumMenu,
+} from "../Data/data.js";
 
 const Navigation = () => {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -514,25 +512,40 @@ const Navigation = () => {
   };
 
   const getMobileMenuData = (menuName) => {
-    switch(menuName) {
-      case 'Summer Sales':
-        return SummerSalesSection.map(item => ({ name: item.title, subcategories: [] }));
-      case 'New':
-        return NewArrivalsSection.map(item => ({ name: item.title, subcategories: [] }));
-      case 'Men':
+    switch (menuName) {
+      case "Summer Sales":
+        return SummerSalesSection.map((item) => ({
+          name: item.title,
+          subcategories: [],
+        }));
+      case "New":
+        return NewArrivalsSection.map((item) => ({
+          name: item.title,
+          subcategories: [],
+        }));
+      case "Men":
         return menMenuData.categories;
-      case 'Women':
+      case "Women":
         return womenMenuData.categories;
-      case 'Equipment':
+      case "Equipment":
         return equipmentMenuData.categories;
-      case 'Collections':
+      case "Collections":
         return collectionMenuData.categories;
-      case 'Kids':
-        return kidsMenu.map(item => ({ name: item.title, subcategories: [] }));
-      case 'Custom':
-        return customMenu.map(item => ({ name: item.title, subcategories: [] }));
-      case 'Venum x UFC':
-        return venumMenu.map(item => ({ name: item.title, subcategories: [] }));
+      case "Kids":
+        return kidsMenu.map((item) => ({
+          name: item.title,
+          subcategories: [],
+        }));
+      case "Custom":
+        return customMenu.map((item) => ({
+          name: item.title,
+          subcategories: [],
+        }));
+      case "Venum x UFC":
+        return venumMenu.map((item) => ({
+          name: item.title,
+          subcategories: [],
+        }));
       default:
         return [];
     }
@@ -544,15 +557,17 @@ const Navigation = () => {
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Image
-              src="/images/logo.avif"
-              alt="VENUM Logo"
-              width={120}
-              height={60}
-              priority
-            />
-          </div>
+          <Link href={"/"}>
+            <div className="flex-shrink-0">
+              <Image
+                src="/images/logo.avif"
+                alt="VENUM Logo"
+                width={120}
+                height={60}
+                priority
+              />
+            </div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex flex-1 justify-center space-x-6">
@@ -586,7 +601,9 @@ const Navigation = () => {
           <div className="flex items-center space-x-3">
             {/* Mobile icons that appear next to hamburger */}
             <div className="flex lg:hidden items-center space-x-3">
-              <Link href={"/account/login"}><User className="w-5 h-5 text-black hover:text-red-500 cursor-pointer" /></Link>
+              <Link href={"/account/login"}>
+                <User className="w-5 h-5 text-black hover:text-red-500 cursor-pointer" />
+              </Link>
               <Heart
                 onClick={() => setFavOpen(true)}
                 className="w-5 h-5 text-black hover:text-red-500 cursor-pointer"
@@ -595,7 +612,7 @@ const Navigation = () => {
                 onClick={() => setCartOpen(true)}
                 className="w-5 h-5 text-black hover:text-red-500 cursor-pointer"
               />
-              
+
               {/* Mobile menu button */}
               <Menu
                 className="w-6 h-6 text-black cursor-pointer"
@@ -605,11 +622,13 @@ const Navigation = () => {
 
             {/* Desktop icons */}
             <div className="hidden lg:flex items-center space-x-3">
-              <Search 
+              <Search
                 onClick={() => setSearchOpen(true)}
-                className="w-4 h-4 text-black hover:text-red-500 cursor-pointer" 
+                className="w-4 h-4 text-black hover:text-red-500 cursor-pointer"
               />
-              <Link href={"/account/login"}><User className="w-4 h-4 text-black hover:text-red-500 cursor-pointer" /></Link>
+              <Link href={"/account/login"}>
+                <User className="w-4 h-4 text-black hover:text-red-500 cursor-pointer" />
+              </Link>
               <Heart
                 onClick={() => setFavOpen(true)}
                 className="w-4 h-4 text-black hover:text-red-500 cursor-pointer"
@@ -659,7 +678,7 @@ const Navigation = () => {
         <div className="lg:hidden px-4 py-4 bg-white border-t shadow-md space-y-2">
           {menuItems.map((item) => {
             const menuData = getMobileMenuData(item.name);
-            
+
             return (
               <div key={item.name}>
                 <button
@@ -681,65 +700,86 @@ const Navigation = () => {
                     {menuData.map((category, index) => (
                       <div key={index}>
                         <button
-                          onClick={() => toggleSubAccordion(`${item.name}-${category.name}`)}
+                          onClick={() =>
+                            toggleSubAccordion(`${item.name}-${category.name}`)
+                          }
                           className={`w-full flex justify-between items-center py-3 px-2 text-left font-semibold transition-all duration-300 rounded-lg border ${
-                            expandedSubItem === `${item.name}-${category.name}` 
-                              ? 'text-red-600 bg-red-50 border-red-200 shadow-sm' 
-                              : 'text-gray-800 hover:text-red-500 hover:bg-gray-50 border-transparent hover:border-gray-200'
+                            expandedSubItem === `${item.name}-${category.name}`
+                              ? "text-red-600 bg-red-50 border-red-200 shadow-sm"
+                              : "text-gray-800 hover:text-red-500 hover:bg-gray-50 border-transparent hover:border-gray-200"
                           }`}
                         >
                           <span className="flex items-center">
-                            <div className={`w-2 h-2 rounded-full mr-3 transition-colors duration-300 ${
-                              expandedSubItem === `${item.name}-${category.name}` 
-                                ? 'bg-red-500' 
-                                : 'bg-gray-400'
-                            }`}></div>
+                            <div
+                              className={`w-2 h-2 rounded-full mr-3 transition-colors duration-300 ${
+                                expandedSubItem ===
+                                `${item.name}-${category.name}`
+                                  ? "bg-red-500"
+                                  : "bg-gray-400"
+                              }`}
+                            ></div>
                             {category.name}
                           </span>
-                          {category.subcategories && category.subcategories.length > 0 && (
-                            <div className={`transform transition-all duration-300 ${
-                              expandedSubItem === `${item.name}-${category.name}` ? 'rotate-180' : 'rotate-0'
-                            }`}>
-                              {expandedSubItem === `${item.name}-${category.name}` ? (
-                                <Minus className="w-4 h-4 text-red-500" />
-                              ) : (
-                                <Plus className="w-4 h-4" />
-                              )}
-                            </div>
-                          )}
+                          {category.subcategories &&
+                            category.subcategories.length > 0 && (
+                              <div
+                                className={`transform transition-all duration-300 ${
+                                  expandedSubItem ===
+                                  `${item.name}-${category.name}`
+                                    ? "rotate-180"
+                                    : "rotate-0"
+                                }`}
+                              >
+                                {expandedSubItem ===
+                                `${item.name}-${category.name}` ? (
+                                  <Minus className="w-4 h-4 text-red-500" />
+                                ) : (
+                                  <Plus className="w-4 h-4" />
+                                )}
+                              </div>
+                            )}
                         </button>
-                        
-                        <div className={`overflow-hidden transition-all duration-500 ease-out ${
-                          expandedSubItem === `${item.name}-${category.name}` && category.subcategories 
-                            ? 'max-h-screen opacity-100 mt-2' 
-                            : 'max-h-0 opacity-0 mt-0'
-                        }`}>
+
+                        <div
+                          className={`overflow-hidden transition-all duration-500 ease-out ${
+                            expandedSubItem ===
+                              `${item.name}-${category.name}` &&
+                            category.subcategories
+                              ? "max-h-screen opacity-100 mt-2"
+                              : "max-h-0 opacity-0 mt-0"
+                          }`}
+                        >
                           {category.subcategories && (
                             <div className="pl-6 py-2 space-y-2 bg-gray-50 rounded-lg border-l-2 border-red-500">
-                              {category.subcategories.map((subItem, subIndex) => (
-                                <div
-                                  key={subIndex}
-                                  className={`transform transition-all duration-300 ease-out ${
-                                    expandedSubItem === `${item.name}-${category.name}` 
-                                      ? 'translate-x-0 opacity-100' 
-                                      : 'translate-x-8 opacity-0'
-                                  }`}
-                                  style={{
-                                    transitionDelay: expandedSubItem === `${item.name}-${category.name}` 
-                                      ? `${subIndex * 100 + 200}ms` 
-                                      : '0ms'
-                                  }}
-                                >
-                                  <a 
-                                    href="#" 
-                                    className="flex items-center py-2 px-3 text-sm font-medium text-gray-800 hover:text-red-600 hover:bg-white rounded-md transition-all duration-200 hover:shadow-sm hover:translate-x-1 group"
+                              {category.subcategories.map(
+                                (subItem, subIndex) => (
+                                  <div
+                                    key={subIndex}
+                                    className={`transform transition-all duration-300 ease-out ${
+                                      expandedSubItem ===
+                                      `${item.name}-${category.name}`
+                                        ? "translate-x-0 opacity-100"
+                                        : "translate-x-8 opacity-0"
+                                    }`}
+                                    style={{
+                                      transitionDelay:
+                                        expandedSubItem ===
+                                        `${item.name}-${category.name}`
+                                          ? `${subIndex * 100 + 200}ms`
+                                          : "0ms",
+                                    }}
                                   >
-                                    <div className="w-1.5 h-1.5 bg-red-400 rounded-full mr-3 group-hover:bg-red-600 transition-colors duration-200"></div>
-                                    <span className="flex-1">{subItem}</span>
-                                    <div className="w-0 group-hover:w-2 h-0.5 bg-red-500 transition-all duration-200 ml-2"></div>
-                                  </a>
-                                </div>
-                              ))}
+                                    <a
+                                      href="#"
+                                      className="flex items-center py-2 px-3 text-sm font-medium text-gray-800 hover:text-red-600 hover:bg-white rounded-md transition-all duration-200 hover:shadow-sm hover:translate-x-1 group"
+                                    >
+                                      <div className="w-1.5 h-1.5 bg-red-400 rounded-full mr-3 group-hover:bg-red-600 transition-colors duration-200"></div>
+                                      <span className="flex-1">{subItem}</span>
+                                      <div className="w-0 group-hover:w-2 h-0.5 bg-red-500 transition-all duration-200 ml-2"></div>
+                                    </a>
+                                  </div>
+                                )
+                              )}
                             </div>
                           )}
                         </div>
@@ -750,14 +790,17 @@ const Navigation = () => {
               </div>
             );
           })}
-          
+
           {/* Additional icons at the end of mobile menu */}
           <div className="flex items-center justify-between pt-4 mt-2 border-t border-gray-200">
             <div className="flex items-center space-x-1">
-              <Search onClick={() => setSearchOpen(true)} className="w-5 h-5 text-black hover:text-red-500 cursor-pointer" />
+              <Search
+                onClick={() => setSearchOpen(true)}
+                className="w-5 h-5 text-black hover:text-red-500 cursor-pointer"
+              />
               <span className="text-sm font-medium ml-2">Search</span>
             </div>
-            
+
             <div className="flex items-center space-x-1">
               <Globe className="w-5 h-5 text-black" />
               <span className="text-sm font-semibold underline cursor-pointer text-black">

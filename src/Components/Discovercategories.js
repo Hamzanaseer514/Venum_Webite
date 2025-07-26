@@ -246,7 +246,7 @@ export default function CategorySlider({
 
   return (
     <div className="bg-white">
-      <div className="py-8 sm:py-12 md:py-16">
+      <div className="py-4 sm:py-6 md:py-8">
         <div className="mb-4 sm:mb-5 md:mb-7 px-4 sm:px-6 md:px-8">
           {heading && (
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 md:mb-8">{heading}</h1>

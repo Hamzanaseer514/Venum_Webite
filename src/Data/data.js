@@ -1,25 +1,133 @@
 export const categoryProducts = [
-  { "title": "BJJ gi", "image": "/images/DiscoverCategory/c1.jpg", "category": "Equipment" },
-  { "title": "Fitness equipments", "image": "/images/DiscoverCategory/c2.webp", "category": "Equipment" },
-  { "title": "Hand Wraps", "image": "/images/DiscoverCategory/c3.jpg", "category": "Equipment" },
-  { "title": "Training Shorts", "image": "/images/DiscoverCategory/c4.webp", "category": "Men" },
-  { "title": "MMA Gloves", "image": "/images/DiscoverCategory/c5.jpg", "category": "Men" },
-  { "title": "Women Shorts", "image": "/images/DiscoverCategory/c6.webp", "category": "Women" },
-  { "title": "Women Jacket", "image": "/images/DiscoverCategory/c1.jpg", "category": "Women" },
-  { "title": "Kids Uniform", "image": "/images/DiscoverCategory/c2.webp", "category": "Kids" },
-  { "title": "Kids Gloves", "image": "/images/DiscoverCategory/c3.jpg", "category": "Kids" },
-  { "title": "Punching Bag", "image": "/images/DiscoverCategory/c4.webp", "category": "Equipment" },
-  { "title": "Groin Guard", "image": "/images/DiscoverCategory/c5.jpg", "category": "Equipment" },
-  { "title": "Shin Guards", "image": "/images/DiscoverCategory/c6.webp", "category": "Equipment" },
-  { "title": "Boxing Shoes", "image": "/images/DiscoverCategory/c1.jpg", "category": "Men" },
-  { "title": "Sports Bra", "image": "/images/DiscoverCategory/c2.webp", "category": "Women" },
-  { "title": "Kids Pads", "image": "/images/DiscoverCategory/c3.jpg", "category": "Kids" },
-  { "title": "Gym Bag", "image": "/images/DiscoverCategory/c4.webp", "category": "Equipment" },
-  { "title": "Speed Rope", "image": "/images/DiscoverCategory/c5.jpg", "category": "Fitness" },
-  { "title": "Tank Top", "image": "/images/DiscoverCategory/c6.webp", "category": "Men" },
-  { "title": "Women Gloves", "image": "/images/DiscoverCategory/c1.jpg", "category": "Women" },
-  { "title": "Kids Helmet", "image": "/images/DiscoverCategory/c2.webp", "category": "Kids" }
-]
+  {
+    title: "BJJ gi",
+    image: "/images/DiscoverCategory/c1.jpg",
+    category: "Equipment",
+  },
+  {
+    title: "Fitness equipments",
+    image: "/images/DiscoverCategory/c2.webp",
+    category: "Equipment",
+  },
+  {
+    title: "Hand Wraps",
+    image: "/images/DiscoverCategory/c3.jpg",
+    category: "Equipment",
+  },
+  {
+    title: "Training Shorts",
+    image: "/images/DiscoverCategory/c4.webp",
+    category: "Men",
+  },
+  {
+    title: "MMA Gloves",
+    image: "/images/DiscoverCategory/c5.jpg",
+    category: "Men",
+  },
+  {
+    title: "Women Shorts",
+    image: "/images/DiscoverCategory/c6.webp",
+    category: "Women",
+  },
+  {
+    title: "Women Jacket",
+    image: "/images/DiscoverCategory/c1.jpg",
+    category: "Women",
+  },
+  {
+    title: "Kids Uniform",
+    image: "/images/DiscoverCategory/c2.webp",
+    category: "Kids",
+  },
+  {
+    title: "Kids Gloves",
+    image: "/images/DiscoverCategory/c3.jpg",
+    category: "Kids",
+  },
+  {
+    title: "Punching Bag",
+    image: "/images/DiscoverCategory/c4.webp",
+    category: "Equipment",
+  },
+  {
+    title: "Groin Guard",
+    image: "/images/DiscoverCategory/c5.jpg",
+    category: "Equipment",
+  },
+  {
+    title: "Shin Guards",
+    image: "/images/DiscoverCategory/c6.webp",
+    category: "Equipment",
+  },
+  {
+    title: "Boxing Shoes",
+    image: "/images/DiscoverCategory/c1.jpg",
+    category: "Men",
+  },
+  {
+    title: "Sports Bra",
+    image: "/images/DiscoverCategory/c2.webp",
+    category: "Women",
+  },
+  {
+    title: "Kids Pads",
+    image: "/images/DiscoverCategory/c3.jpg",
+    category: "Kids",
+  },
+  {
+    title: "Gym Bag",
+    image: "/images/DiscoverCategory/c4.webp",
+    category: "Equipment",
+  },
+  {
+    title: "Speed Rope",
+    image: "/images/DiscoverCategory/c5.jpg",
+    category: "Fitness",
+  },
+  {
+    title: "Tank Top",
+    image: "/images/DiscoverCategory/c6.webp",
+    category: "Men",
+  },
+  {
+    title: "Women Gloves",
+    image: "/images/DiscoverCategory/c1.jpg",
+    category: "Women",
+  },
+  {
+    title: "Kids Helmet",
+    image: "/images/DiscoverCategory/c2.webp",
+    category: "Kids",
+  },
+];
+
+export const discovernewcategory = [
+  {
+    title: "Kids",
+    image: "/images/DiscoverCategory/collection/3.jpg",
+    category: "Equipment",
+  },
+  {
+    title: "Divide",
+    image: "/images/DiscoverCategory/collection/1.jpg",
+    category: "Equipment",
+  },
+  {
+    title: "Ares",
+    image: "/images/DiscoverCategory/collection/2.jpg",
+    category: "Equipment",
+  },
+  {
+    title: "Polaris",
+    image: "/images/DiscoverCategory/collection/4.jpg",
+    category: "Men",
+  },
+  {
+    title: "WOW FC",
+    image: "/images/DiscoverCategory/collection/5.jpg",
+    category: "Men",
+  },
+];
 
 export const SummerSalesSection = [
   {
@@ -64,7 +172,7 @@ export const NewArrivalsSection = [
     title: "New For Equipment",
     image: "/images/men.jpg",
     alt: "Equipment category",
-  }
+  },
 ];
 export const kidsMenu = [
   {
@@ -81,7 +189,7 @@ export const kidsMenu = [
     title: "New For Kids",
     image: "/images/women.jpg",
     alt: "Kids category",
-  }
+  },
 ];
 export const customMenu = [
   {
@@ -98,7 +206,7 @@ export const customMenu = [
     title: "Custom kits",
     image: "/images/MenusPicture/Custom/3.webp",
     alt: "Custom kits",
-  }
+  },
 ];
 export const venumMenu = [
   {
@@ -120,7 +228,7 @@ export const venumMenu = [
     title: "Fusion Replica",
     image: "/images/MenusPicture/venumufc/4.webp",
     alt: "Fusion Replica",
-  }
+  },
 ];
 
 // data/menMenuData.js
@@ -172,8 +280,7 @@ export const menMenuData = {
     },
     {
       name: "Look of the moment",
-      image:
-        "/images/men.jpg",
+      image: "/images/men.jpg",
     },
   ],
 };
@@ -221,8 +328,7 @@ export const womenMenuData = {
     },
     {
       name: "Look of the moment",
-      image:
-        "/images/women.jpg",
+      image: "/images/women.jpg",
     },
   ],
 };
@@ -291,27 +397,17 @@ export const equipmentMenuData = {
     },
     {
       name: "Fitness",
-      subcategories: [
-        "Men Fitness",
-        "Women Fitness",
-        "Fitness equipment",
-      ],
+      subcategories: ["Men Fitness", "Women Fitness", "Fitness equipment"],
     },
 
     // C4
     {
       name: "Punching Bags & Coaching Gear",
-      subcategories: [
-        "Punching Bags",
-        "Coaching Gear",
-      ],
+      subcategories: ["Punching Bags", "Coaching Gear"],
     },
     {
       name: "Motorsports",
-      subcategories: [
-        "Lifestyle",
-        "Accessories",
-      ],
+      subcategories: ["Lifestyle", "Accessories"],
     },
   ],
 };
@@ -383,13 +479,3 @@ export const collectionMenuData = {
     },
   ],
 };
-
-
-
-
-
-
-
-
-
-
