@@ -40,10 +40,10 @@ export default function InfoBanner() {
                 className="object-contain"
               />
             </div>
-            <h3 className="text-lg font-semibold text-black mb-2">
+            <h3 className="text-lg sm:text-xl md:text-2xl  font-bold text-black mb-2">
               {feature.title}
             </h3>
-            <p className="text-sm text-gray-700">{feature.description}</p>
+            <p className="text-sm sm:text-md md:text-lg font-semibold text-gray-700">{feature.description}</p>
           </div>
         ))}
       </div>

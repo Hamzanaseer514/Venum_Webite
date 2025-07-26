@@ -82,7 +82,7 @@ export default function GloveCard({ glove }) {
       <div className="pt-3 pb-4 px-4 sm:pt-4 sm:pb-5 sm:pr-5">
         <h3 className="text-base sm:text-lg font-semibold mb-1">{glove.title}</h3>
         <p className="text-sm text-gray-500">{glove.description}</p>
-        <p className="text-base sm:text-lg font-bold mt-2">{glove.price}</p>
+        <p className="text-base sm:text-lg font-bold mt-2">{glove.price} €</p>
 
         <div className="flex gap-2 mt-3">
           {glove.images.map((img, index) => (

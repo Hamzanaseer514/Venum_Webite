@@ -1,12 +1,13 @@
 "use client";
 import { useRef, useEffect } from "react";
 import GloveCard from "./GloveCard";
+import Link from "next/link";
 
 const gloves = new Array(15).fill(0).map((_, i) => ({
   thumbnail: "/images/DiscoverCategory/c5.jpg",
   title: `Venum Contender ${i + 1}`,
   description: "Boxing Gloves - Forest Green",
-  price: "49.99€",
+  price: "49.99",
   images: [
     "/images/DiscoverCategory/c5.jpg",
     "/images/DiscoverCategory/c5.jpg",
@@ -37,10 +38,11 @@ export default function GloveCarousel() {
   return (
     <div className="w-full px-4 py-6">
       {/* Header */}
-      <div className="flex justify-between items-center mb-5">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-800">
-          Featured Gloves
+      <div className="flex justify-between items-center mb-3 py-3 px-3">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">
+          New Release
         </h2>
+
         <div className="flex gap-2">
           <button
             onClick={() => scrollByCard("left")}
@@ -56,6 +58,11 @@ export default function GloveCarousel() {
           </button>
         </div>
       </div>
+      <Link href="/collection/new-products">
+        <h2 className="text-xl underline md:text-2xl font-bold text-gray-500 px-3 mb-3">
+          See All
+        </h2>
+      </Link>
 
       {/* Cards Row */}
       <div

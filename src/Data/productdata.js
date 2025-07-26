@@ -1260,7 +1260,7 @@ export const products = [
     title: "Dog Food",
     description:
       "Specially formulated dog food designed to provide essential nutrients for your canine companion.",
-    category: "groceries",
+    category: "new-products",
     price: 10.99,
     discountPercentage: 10.27,
     rating: 4.55,
@@ -1309,6 +1309,9 @@ export const products = [
     },
     images: [
       "https://cdn.dummyjson.com/product-images/groceries/dog-food/1.webp",
+      "https://cdn.dummyjson.com/product-images/groceries/dog-food/1.webp",
+      "https://cdn.dummyjson.com/product-images/groceries/dog-food/1.webp",
+      "https://cdn.dummyjson.com/product-images/groceries/dog-food/1.webp",
     ],
     thumbnail:
       "https://cdn.dummyjson.com/product-images/groceries/dog-food/thumbnail.webp",
@@ -1318,7 +1321,7 @@ export const products = [
     title: "Eggs",
     description:
       "Fresh eggs, a versatile ingredient for baking, cooking, or breakfast.",
-    category: "groceries",
+    category: "new-products",
     price: 2.99,
     discountPercentage: 11.05,
     rating: 2.53,
@@ -1374,7 +1377,7 @@ export const products = [
     title: "Fish Steak",
     description:
       "Quality fish steak, suitable for grilling, baking, or pan-searing.",
-    category: "groceries",
+    category: "new-products",
     price: 14.99,
     discountPercentage: 4.23,
     rating: 3.78,
@@ -1432,7 +1435,7 @@ export const products = [
     title: "Green Bell Pepper",
     description:
       "Fresh and vibrant green bell pepper, perfect for adding color and flavor to your dishes.",
-    category: "groceries",
+    category: "new-products",
     price: 1.29,
     discountPercentage: 0.16,
     rating: 3.25,

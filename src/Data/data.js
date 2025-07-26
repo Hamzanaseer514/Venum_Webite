@@ -128,6 +128,28 @@ export const discovernewcategory = [
     category: "Men",
   },
 ];
+export const discovernewsports = [
+  {
+    title: "Boxing",
+    image: "/images/DiscoverCategory/sports/1.jpg",
+    category: "Equipment",
+  },
+  {
+    title: "MMA",
+    image: "/images/DiscoverCategory/sports/2.jpg",
+    category: "Equipment",
+  },
+  {
+    title: "Muay Thai",
+    image: "/images/DiscoverCategory/sports/3.jpg",
+    category: "Equipment",
+  },
+  {
+    title: "JJB",
+    image: "/images/DiscoverCategory/sports/4.jpg",
+    category: "Men",
+  }
+];
 
 export const SummerSalesSection = [
   {

@@ -123,16 +123,19 @@ import React from "react";
 export default function SummerSale({ buttons }) {
   // Responsive button base classes
   const buttonBase =
-    "relative group overflow-hidden border border-white transform skew-x-[-12deg] w-[120px] sm:w-[140px] md:w-[160px] text-center";
+    "relative group overflow-hidden  border border-white transform skew-x-[-12deg] w-[120px] sm:w-[140px] md:w-[160px] text-center";
 
   const innerBg =
     "absolute inset-0 w-0 bg-white transition-all duration-500 ease-out group-hover:w-full z-0";
 
   const innerText =
     "relative block py-2 sm:py-3 text-white group-hover:text-black transform skew-x-[12deg] transition-colors duration-300 text-sm sm:text-base font-semibold z-10";
-
+        
+        // Responsive height classes donot remove it 
+        //NEW: max-[400px]:h-[200px] h-[250px] sm:min-h-[400px] md:min-h-[550px] lg:min-h-[600px] xl:min-h-[800px]
+        //OLD: h-[400px] sm:h-[500px] md:h-[600px] lg:h-screen
   return (
-    <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-screen bg-black text-white overflow-hidden">
+    <div className="relative w-full max-[400px]:h-[200px] h-[250px] sm:min-h-[400px] md:min-h-[550px] lg:min-h-[600px] xl:min-h-[800px] bg-black text-white overflow-hidden">
       {/* Background Image with proper aspect ratio handling */}
       <div className="absolute inset-0">
         <Image
@@ -157,10 +160,12 @@ export default function SummerSale({ buttons }) {
                 <span className={innerText}>{btn.text}</span>
               </Link>
             ) : (
-              <button key={index} className={buttonBase}>
-                <span className={innerBg}></span>
-                <span className={innerText}>{btn.text}</span>
-              </button>
+              <Link href={`/collection/${btn.slug}`} key={index}>
+                <button  className={buttonBase}>
+                  <span className={innerBg}></span>
+                  <span className={innerText}>{btn.text}</span>
+                </button>
+              </Link>
             )
           )}
         </div>
@@ -177,7 +182,7 @@ export default function SummerSale({ buttons }) {
               </Link>
             ) : (
               <Link href={`/collection/${btn.slug}`} key={index}>
-                <button  className={buttonBase}>
+                <button className={buttonBase}>
                   <span className={innerBg}></span>
                   <span className={innerText}>{btn.text}</span>
                 </button>
